@@ -18,8 +18,8 @@ namespace FisherSite.Persistence.Configurations
                 .IsRequired();
 
             builder.HasData(
-                new ApartmentState() { Id=1, Name="full"},
-                new ApartmentState() { Id=2, Name="empty"});
+                new ApartmentState() { Id=1, Name="Empty"},
+                new ApartmentState() { Id=2, Name="Full"});
         }
     }
 }

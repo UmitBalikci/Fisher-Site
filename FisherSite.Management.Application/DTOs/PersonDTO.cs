@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FisherSite.Domain
+namespace FisherSite.Management.Application.DTOs
 {
-    public class Person
+    public class PersonDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }

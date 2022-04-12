@@ -13,7 +13,7 @@ namespace FisherSite.Domain
         public int ApartmentStateId { get; set; }
         public int ApartmentTypeId { get; set; }
         public Floor ApartmentFloor { get; set; }
-        public int PersonId { get; set; }
+        public int? PersonId { get; set; }
 
         public Block Block { get; set; }
         public ApartmentState ApartmentState { get; set; }

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FisherSite.Management.Application\FisherSite.Management.Application.csproj" />
+    <ProjectReference Include="..\FisherSite.Management.DataAccess\FisherSite.Management.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

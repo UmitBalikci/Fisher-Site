@@ -1,3 +1,7 @@
+using FisherSite.Management.Application.Abstracts;
+using FisherSite.Management.Application.Concretes;
+using FisherSite.Management.Application.Repository;
+using FisherSite.Management.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +27,8 @@ namespace FisherSite.Management.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<IPersonService, PersonService>();
+            services.AddTransient<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

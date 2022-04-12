@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PersonDTO>
+
+<div class="row">
+    <div class="col-12 col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Identity Number</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Vehicle Info</th>
+                    <th>
+                        <a class="btn btn-success" asp-action="Create">New Person</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in Model)
+                {
+                    <tr>
+                        <td>@person.Id</td>
+                        <td>@person.Name</td>
+                        <td>@person.IdentityNumber</td>
+                        <td>@person.Email</td>
+                        <td>@person.Phone</td>
+                        <td>@person.VehicleInfo</td>
+                        <td>
+                            <a class="btn btn-primary" asp-route-id=@person.Id asp-action="Update">Update</a>
+                            <a class="btn btn-danger" asp-route-id=@person.Id asp-action="Delete">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
