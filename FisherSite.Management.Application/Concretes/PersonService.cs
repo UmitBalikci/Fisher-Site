@@ -19,12 +19,30 @@ namespace FisherSite.Management.Application.Concretes
         }
         public void Create(PersonDTO personDTO)
         {
-            throw new NotImplementedException();
+            var person = new Person()
+            {
+                Id = personDTO.Id,
+                Name = personDTO.Name,
+                IdentityNumber = personDTO.IdentityNumber,
+                Email = personDTO.Email,
+                Phone = personDTO.Phone,
+                VehicleInfo = personDTO.VehicleInfo
+            };
+            _personRepository.Create(person);
         }
 
         public void Delete(PersonDTO personDTO)
         {
-            throw new NotImplementedException();
+            var person = new Person()
+            {
+                Id = personDTO.Id,
+                Name = personDTO.Name,
+                IdentityNumber = personDTO.IdentityNumber,
+                Email = personDTO.Email,
+                Phone = personDTO.Phone,
+                VehicleInfo = personDTO.VehicleInfo
+            };
+            _personRepository.Delete(person);
         }
 
         public IEnumerable<PersonDTO> GetAll()
@@ -46,9 +64,33 @@ namespace FisherSite.Management.Application.Concretes
             return personDTOs;
         }
 
+        public PersonDTO GetById(int id)
+        {
+            var person = _personRepository.GetById(id);
+            var personDTO = new PersonDTO()
+            {
+                Id = person.Id,
+                Name = person.Name,
+                IdentityNumber = person.IdentityNumber,
+                Email = person.Email,
+                Phone = person.Phone,
+                VehicleInfo = person.VehicleInfo
+            };
+            return personDTO;
+        }
+
         public void Update(PersonDTO personDTO)
         {
-            throw new NotImplementedException();
+            var person = new Person()
+            {
+                Id = personDTO.Id,
+                Name = personDTO.Name,
+                IdentityNumber = personDTO.IdentityNumber,
+                Email = personDTO.Email,
+                Phone = personDTO.Phone,
+                VehicleInfo = personDTO.VehicleInfo
+            };
+            _personRepository.Update(person);
         }
     }
 }

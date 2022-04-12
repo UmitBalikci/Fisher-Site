@@ -13,5 +13,6 @@ namespace FisherSite.Management.Application.Repository
         void Create(Person person);
         void Update(Person person);
         void Delete(Person person);
+        Person GetById(int id);
     }
 }

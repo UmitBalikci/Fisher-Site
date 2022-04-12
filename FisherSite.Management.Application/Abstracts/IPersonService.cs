@@ -14,5 +14,6 @@ namespace FisherSite.Management.Application.Abstracts
         void Create(PersonDTO personDTO);
         void Update(PersonDTO personDTO);
         void Delete(PersonDTO personDTO);
+        PersonDTO GetById(int id);
     }
 }

@@ -13,12 +13,16 @@ namespace FisherSite.Management.DataAccess
     {
         public void Create(Person person)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Persons.Add(person);
+            dbContext.SaveChanges();
         }
 
         public void Delete(Person person)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Persons.Remove(person);
+            dbContext.SaveChanges();
         }
 
         public IEnumerable<Person> GetAll()
@@ -27,9 +31,17 @@ namespace FisherSite.Management.DataAccess
             return dbContext.Persons.ToList();
         }
 
+        public Person GetById(int id)
+        {
+            var dbContext = new FisherSiteDbContext();
+            return dbContext.Persons.Find(id);
+        }
+
         public void Update(Person person)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Persons.Update(person);
+            dbContext.SaveChanges();
         }
     }
 }
