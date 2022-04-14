@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ApartmentDTO>
+
+<div class="row">
+    <div class="col-12 col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Block Name</th>
+                    <th>Apartment State</th>
+                    <th>Apartment Type</th>
+                    <th>Apartment Floor</th>
+                    <th>Person Name</th>
+                    <th>
+                        <a class="btn btn-success" asp-action="Create">New Person</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var apartment in Model)
+                {
+                    <tr>
+                        <td>@apartment.Id</td>
+                        <td>
+                            @if (ViewBag.Blocks != null)
+                           {
+                               @((ViewBag.Blocks as IEnumerable<BlockDTO>).SingleOrDefault(bl => bl.Id == apartment.BlockId).Name)
+                           }
+                        </td>
+                        <td>
+                            @if (ViewBag.ApartmentStates != null)
+                           {
+                               @((ViewBag.ApartmentStates as IEnumerable<ApartmentStateDTO>).SingleOrDefault(aps => aps.Id == apartment.ApartmentStateId).Name)
+                           }
+                        </td>
+                        <td>
+                            @if (ViewBag.ApartmentTypes != null)
+                           {
+                               @((ViewBag.ApartmentTypes as IEnumerable<ApartmentTypeDTO>).SingleOrDefault(apt => apt.Id == apartment.ApartmentTypeId).Name)
+                           }
+                        </td>
+                        <td>@apartment.ApartmentFloor</td>
+                        <td>
+                            @if (apartment.PersonId != null)
+                            {
+                                @((ViewBag.Persons as IEnumerable<PersonDTO>).SingleOrDefault(p => p.Id == apartment.PersonId).Name)
+                            }
+                            else
+                            {
+                                <p>Empty</p>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" asp-route-id=@apartment.Id asp-action="Update">Update</a>
+                            <a class="btn btn-danger" asp-route-id=@apartment.Id asp-action="Delete">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

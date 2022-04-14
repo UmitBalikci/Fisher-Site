@@ -29,6 +29,18 @@ namespace FisherSite.Management.Presentation
             services.AddControllersWithViews();
             services.AddTransient<IPersonService, PersonService>();
             services.AddTransient<IPersonRepository, PersonRepository>();
+
+            services.AddTransient<IApartmentService, ApartmentService>();
+            services.AddTransient<IApartmentRepository, ApartmentRepository>();
+
+            services.AddTransient<IApartmentStateService, ApartmentStateService>();
+            services.AddTransient<IApartmentStateRepository, ApartmentStateRepository>();
+
+            services.AddTransient<IApartmentTypeService, ApartmentTypeService>();
+            services.AddTransient<IApartmentTypeRepository, ApartmentTypeRepository>();
+
+            services.AddTransient<IBlockService, BlockService>();
+            services.AddTransient<IBlockRepository, BlockRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

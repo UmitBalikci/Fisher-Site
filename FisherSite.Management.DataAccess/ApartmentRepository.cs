@@ -1,5 +1,6 @@
 ﻿using FisherSite.Domain;
 using FisherSite.Management.Application.Repository;
+using FisherSite.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,27 +13,35 @@ namespace FisherSite.Management.DataAccess
     {
         public void Create(Apartment apartment)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Apartments.Add(apartment);
+            dbContext.SaveChanges();
         }
 
         public void Delete(Apartment apartment)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Apartments.Remove(apartment);
+            dbContext.SaveChanges();
         }
 
         public IEnumerable<Apartment> GetAll()
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            return dbContext.Apartments.ToList();
         }
 
         public Apartment GetById(int id)
         {
-            throw new NotImplementedException();
+            var dbContext=new FisherSiteDbContext();
+            return dbContext.Apartments.Find(id);
         }
 
         public void Update(Apartment apartment)
         {
-            throw new NotImplementedException();
+            var dbContext = new FisherSiteDbContext();
+            dbContext.Apartments.Update(apartment);
+            dbContext.SaveChanges();
         }
     }
 }
