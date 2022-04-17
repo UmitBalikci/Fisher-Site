@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Abstracts
 {
-    public interface IBlockService
+    public interface IBlockService : IService<BlockDTO>
     {
-        IEnumerable<BlockDTO> GetAll();
     }
 }

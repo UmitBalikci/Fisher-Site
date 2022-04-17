@@ -1,6 +1,7 @@
 ﻿using FisherSite.Management.Application.Abstracts;
 using FisherSite.Management.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FisherSite.Management.Presentation.Controllers
 {
@@ -39,6 +40,14 @@ namespace FisherSite.Management.Presentation.Controllers
         }
         public IActionResult Create()
         {
+            var persons = _personService.GetAll();
+            var apartmentStates = _apartmentStateService.GetAll();
+            var apartmentTypes = _apartmentTypeService.GetAll();
+            var blocks = _blockService.GetAll();
+            ViewBag.Persons = new SelectList(persons, "Id", "Name");
+            ViewBag.ApartmentStates = new SelectList(apartmentStates, "Id", "Name");
+            ViewBag.ApartmentTypes = new SelectList(apartmentTypes, "Id", "Name");
+            ViewBag.Blocks = new SelectList(blocks, "Id", "Name");
             return View();
         }
         [HttpPost]
@@ -59,6 +68,14 @@ namespace FisherSite.Management.Presentation.Controllers
             var apartment = _apartmentService.GetById(id);
             if (apartment != null)
             {
+                var persons = _personService.GetAll();
+                var apartmentStates = _apartmentStateService.GetAll();
+                var apartmentTypes = _apartmentTypeService.GetAll();
+                var blocks = _blockService.GetAll();
+                ViewBag.Persons = new SelectList(persons, "Id", "Name");
+                ViewBag.ApartmentStates = new SelectList(apartmentStates, "Id", "Name");
+                ViewBag.ApartmentTypes = new SelectList(apartmentTypes, "Id", "Name");
+                ViewBag.Blocks = new SelectList(blocks, "Id", "Name");
                 return View(apartment);
             }
             return Content("Bu Id'ye ait kayıt bulunamadı!");

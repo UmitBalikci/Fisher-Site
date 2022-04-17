@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Repository
 {
-    public interface IPersonRepository
-    {
-        IEnumerable<Person> GetAll();
-        void Create(Person person);
-        void Update(Person person);
-        void Delete(Person person);
-        Person GetById(int id);
+    public interface IPersonRepository : IRepository<Person>
+    {        
     }
 }

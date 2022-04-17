@@ -8,12 +8,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Abstracts
 {
-    public interface IPersonService
+    public interface IPersonService : IService<PersonDTO>
     {
-        IEnumerable<PersonDTO> GetAll();
-        void Create(PersonDTO personDTO);
-        void Update(PersonDTO personDTO);
-        void Delete(PersonDTO personDTO);
-        PersonDTO GetById(int id);
     }
 }

@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Abstracts
 {
-    public interface IApartmentService
+    public interface IApartmentService : IService<ApartmentDTO>
     {
-        IEnumerable<ApartmentDTO> GetAll();
-        void Create(ApartmentDTO apartmentDTO);
-        void Update(ApartmentDTO apartmentDTO);
-        void Delete(ApartmentDTO apartmentDTO);
-        ApartmentDTO GetById(int id);
     }
 }

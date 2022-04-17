@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Repository
 {
-    public interface IBlockRepository
+    public interface IBlockRepository : IRepository<Block>
     {
-        IEnumerable<Block> GetAll();
     }
 }

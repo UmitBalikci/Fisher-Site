@@ -5,15 +5,15 @@
         <form method="post" class="form-check">
             <div class="mb-3">
                 <label class="form-label" asp-for ="BlockId">Block Name</label>
-                <select></select>
+                <select class="form-control" asp-items="@ViewBag.BLocks" asp-for="BlockId"></select>
             </div>
             <div class="mb-3">
                 <label class="form-label" asp-for ="ApartmentStateId">Apartment State</label>
-                <select></select>
+                <select class="form-control" asp-for="ApartmentStateId" asp-items="ViewBag.ApartmentStates"></select>
             </div>
             <div class="mb-3">
                 <label class="form-label" asp-for ="ApartmentTypeId">Apartment Type</label>
-                <select></select>
+                <select class="form-control" asp-for="ApartmentTypeId" asp-items="ViewBag.ApartmentTypes"></select>
             </div>
             <div class="mb-3">
                 <label class="form-label" asp-for ="ApartmentFloor">Floor</label>
@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" asp-for ="PersonId">Person Name</label>
-                <select></select>
+                <select class="form-control" asp-for="PersonId" asp-items="ViewBag.Persons"></select>
             </div>
             <button class="btn btn-outline-success" type="submit">Save</button>
         </form>

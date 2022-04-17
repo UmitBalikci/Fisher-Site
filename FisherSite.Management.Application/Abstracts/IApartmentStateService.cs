@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Abstracts
 {
-    public interface IApartmentStateService
+    public interface IApartmentStateService : IService<ApartmentStateDTO>
     {
-        IEnumerable<ApartmentStateDTO> GetAll();
     }
 }

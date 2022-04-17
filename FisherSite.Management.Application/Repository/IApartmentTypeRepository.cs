@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace FisherSite.Management.Application.Repository
 {
-    public interface IApartmentTypeRepository
+    public interface IApartmentTypeRepository : IRepository<ApartmentType>
     {
-        IEnumerable<ApartmentType> GetAll();
     }
 }
