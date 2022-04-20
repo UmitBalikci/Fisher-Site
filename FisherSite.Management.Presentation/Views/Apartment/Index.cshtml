@@ -11,6 +11,7 @@
                     <th>Apartment Type</th>
                     <th>Apartment Floor</th>
                     <th>Person Name</th>
+                    <th>Apartment Dues</th>
                     <th>
                         <a class="btn btn-success" asp-action="Create">New Apartment</a>
                     </th>
@@ -50,6 +51,7 @@
                                 <p>Empty</p>
                             }
                         </td>
+                        <td>@apartment.Dues TL</td>
                         <td>
                             <a class="btn btn-primary" asp-route-id=@apartment.Id asp-action="Update">Update</a>
                             <a class="btn btn-danger" asp-route-id=@apartment.Id asp-action="Delete">Delete</a>

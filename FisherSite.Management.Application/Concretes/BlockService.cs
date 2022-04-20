@@ -17,7 +17,8 @@ namespace FisherSite.Management.Application.Concretes
         {
             _blockRepository = blockRepository;
         }
-        IEnumerable<BlockDTO> IBlockService.GetAll()
+
+        public IEnumerable<BlockDTO> GetAll()
         {
             var blocks = _blockRepository.GetAll();
             var blockDTOs = new List<BlockDTO>();
@@ -30,6 +31,10 @@ namespace FisherSite.Management.Application.Concretes
                 });
             }
             return blockDTOs;
+        }
+        public BlockDTO GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

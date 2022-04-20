@@ -54,7 +54,8 @@ namespace FisherSite.Management.Application.Concretes
                     ApartmentStateId = apartment.ApartmentStateId,
                     ApartmentTypeId = apartment.ApartmentTypeId,
                     ApartmentFloor = apartment.ApartmentFloor,
-                    PersonId = apartment.PersonId
+                    PersonId = apartment.PersonId,
+                    Dues = apartment.Dues
                 });
             }
             return apartmentDTOs;

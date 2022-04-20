@@ -14,6 +14,31 @@ namespace FisherSite.Domain
         public int ApartmentTypeId { get; set; }
         public Floor ApartmentFloor { get; set; }
         public int? PersonId { get; set; }
+        public int Dues
+        {
+            get
+            {
+                if (ApartmentStateId != 1)
+                {
+                    if (ApartmentTypeId == 1)
+                    {
+                        return 100;
+                    }
+                    else if (ApartmentTypeId == 2)
+                    {
+                        return 200;
+                    }
+                    else
+                    {
+                        return ApartmentTypeId == 3 ? 300 : 400;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
         public Block Block { get; set; }
         public ApartmentState ApartmentState { get; set; }

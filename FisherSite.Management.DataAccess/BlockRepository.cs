@@ -16,5 +16,11 @@ namespace FisherSite.Management.DataAccess
             var dbContext = new FisherSiteDbContext();
             return dbContext.Blocks.ToList();
         }
+
+        public Block GetById(int id)
+        {
+            var dbContext = new FisherSiteDbContext();
+            return dbContext.Blocks.Find(id);
+        }
     }
 }

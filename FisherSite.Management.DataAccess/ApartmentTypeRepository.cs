@@ -16,5 +16,11 @@ namespace FisherSite.Management.DataAccess
             var dbContext = new FisherSiteDbContext();
             return dbContext.ApartmentTypes.ToList();
         }
+
+        public ApartmentType GetById(int id)
+        {
+            var dbContext = new FisherSiteDbContext();
+            return dbContext.ApartmentTypes.Find(id);
+        }
     }
 }

@@ -32,5 +32,10 @@ namespace FisherSite.Management.Application.Concretes
             }
             return apartmentStateDTOs;
         }
+
+        public ApartmentStateDTO GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

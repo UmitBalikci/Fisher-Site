@@ -14,6 +14,8 @@ namespace FisherSite.Management.Application.DTOs
         public int ApartmentStateId { get; set; }
         public int ApartmentTypeId { get; set; }
         public Floor ApartmentFloor { get; set; }
+
+        public int Dues { get; set; }
         public int? PersonId { get; set; }
     }
 }
